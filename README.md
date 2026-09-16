@@ -24,3 +24,24 @@ To simplify, workgroups are decentralized, peer to peer and local accounts only.
 A workgroup is a logical network more suited for the home environment. Each device has its own local accounts, and multiple users can use the same device with different local logins. The only connection each device has in the workgroup is the network all of them are connected to. This is ideal for the home environment where the family has individual devices such as computers that are uniquely configured to a different person in that household.
 
 A domain is a logical network that is suited for companies that have plenty of employees onboard. This allows for admins who maintain the domain controller to create and manage user and accounts in active directory. Once a user has their login credentials and permissions set, they will be able to log into any computer within that domain that is within their privilege to log in-to. Those users and computers can then be further organized into what are called organizational units(OU). The administrator can apply and configure GPOs to the OUs to allow or restrict access to certain features, enforce password policies, configure windows settings etc. 
+
+### Server setup
+First, though not required I will start with changing the hostname to something that is easily memorable. We will use DC-ADMIN.
+Once you change the name the machine must do a restart to finalize the switch. 
+
+<img width="1025" height="696" alt="VM domain name" src="https://github.com/user-attachments/assets/9a2d3f06-23f1-4421-92c0-e547357cd6aa" />
+
+Once it is verified that the hostname is changed we can configure our IP and DNS.
+
+I will need to set a static IP address and a preferred DNS address. The reason why we have to set up the DNS address is because AD DS utilizes DNS in order to perform various functions such as authentication. When we download the DNS role/tools onto the server, plenty of records will be written to the server for the server's DNS functions. To set this up, follow these steps:
+
+- Navigate to the Control Panel.
+- Go into network & internet.
+- Click on ethernet.
+There you'll see IP assignment and you can toggle this from auto to manual. 
+I can now give my server a static IP address, subnet mask, and a DNS server address.
+The DNS server address will be the server so I used my server's IP address as the DNS server address. A loopback address can also be used.
+Note: the computers that will set up in my company will need to utilize the correct DNS server address.
+
+<img width="513" height="633" alt="Untitled" src="https://github.com/user-attachments/assets/e2ae9a9f-a10b-42dc-9fe5-7aeac02c1126" />
+
