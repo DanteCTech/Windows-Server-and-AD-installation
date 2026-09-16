@@ -8,5 +8,9 @@ Using Oracle VirtualBox, I will demonstrate the installation for Windows Server 
 - Once installed, setup your admin password and unlock your VM using the simulated keys.
 - Here is the outlook on Server manager's interface! This will pop up on its own each time the VM is powered on. <img width="991" height="674" alt="image" src="https://github.com/user-attachments/assets/64ab7513-076e-4a01-97fe-d88f8df0d042" />
 
-## Differences of Workgroups and Domains
-The main difference between workgroups and domains is that in a workgroup, all computers work independently, no computer has control over any other computer. In a Domain, all the computers are controlled by the administrator. For workgroups, computers connected to your LAN at home are usually in a workgroup. Users will be able to create their own accounts on the devices and manage their own settings. Using a switch or a hub the users are also able to access local resources like printers. 
+## Workgroups and Domains
+To simplify, workgroups are decentralized, peer to peer and local accounts only. While a Domain is a centralized environment, domain users can authenticate with unique login credentials on domain joined computers where that user is permitted to log on.
+
+A workgroup is a logical network more suited for the home environment. Each device is independently configured to a sole user and cannot be seamlessly transfered from one device to the next. The only connection each device has in the workgroup is the network all of them are connected to. This is ideal for the home environment where the family has individual devices such as computers that are uniquely configured to a different person in that household.
+
+A domain is a logical network that is suited for companies that have plenty of employees onboard. This allows for admins who maintain the domain controller to register users and computers to the server. Once a user has their login credentials and permissions set, they will be able to log into any computer within that domain that is within their privilege to log in-to. Those users and computers can then be further organized into what are called organizational units(OU). The administrator can apply and configure GPOs to the OUs to allow or restrict access to certain features, enforce password policies, configure windows settings etc. 
