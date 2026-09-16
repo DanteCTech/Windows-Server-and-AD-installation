@@ -43,5 +43,39 @@ I can now give my server a static IP address, subnet mask, and a DNS server addr
 The DNS server address will be the server so I used my server's IP address as the DNS server address. A loopback address can also be used.
 Note: the computers that will set up in my company will need to utilize the correct DNS server address.
 
-<img width="513" height="633" alt="Untitled" src="https://github.com/user-attachments/assets/e2ae9a9f-a10b-42dc-9fe5-7aeac02c1126" />
+ <img width="513" height="633" alt="Untitled" src="https://github.com/user-attachments/assets/e2ae9a9f-a10b-42dc-9fe5-7aeac02c1126" />
 
+
+
+Now I will jump into configuring the Active Directory Domain Server on my VM. 
+- On the Server manager window, select " Add roles and Features". If it is your first time, a help wizard will appear to guide you through the steps. 
+
+ <img width="812" height="695" alt="VM ROLE setup" src="https://github.com/user-attachments/assets/de7709bf-7e7b-4e69-9045-c274ead3341e" />
+
+- Select "Role Based or Featured based installation".
+  
+ <img width="779" height="310" alt="VM install role" src="https://github.com/user-attachments/assets/239cf842-6bda-4ed6-b122-0a753b461e0a" />
+
+- The Server Selection tab will let me choose my server to install roles and features to. I highlighted my computer and hit next.
+- The Server Roles tab shows all the roles you can install to the server. I will flag the Active Directory Domain Services option. Flagging the role will action a pop-up that will show me all the required features/tools that will be install with AD DS. Press add features and next.
+- The Confirmation tab will show the roles and features that will be installed. Once completed restart the machine.
+- Once my system has re-booted, I will promote my server to Domain Controller.
+
+ <img width="1027" height="695" alt="VM promote" src="https://github.com/user-attachments/assets/c6ee5848-9710-4543-a3b8-ae50f537e1c9" />
+
+ ### Deployment Configuration
+Now that the Deployment Configuration is displayed, I am going to flag the option to add a new forest. This will allow me to set up our domain controller in a new domain. There are two other options:
+Add a domain controller to an existing domain. This will make the forest fault tolerant.
+Add a new domain to an existing forest.
+Note: both these options were not chosen due to the fact that I am setting everything up from scratch. Ground zero!
+I am now able to name the Root Domain. For this, I re-named to be DC.local.
+
+ <img width="751" height="358" alt="VM deployment" src="https://github.com/user-attachments/assets/7ac3a104-83e6-4e3b-95a1-5d7de467bae2" />
+
+ I kept all the default boxes checked outside of changing the DSRM password and NetBIOS Domain Name and finalized the installation.
+ The Machine will have to reboot once more.
+
+ <img width="1005" height="470" alt="VM server finished" src="https://github.com/user-attachments/assets/e3e6f0bc-4eb1-41a6-b77e-1f7f277f27c3" />
+
+
+Completed! We have Active Directory Domain Server installed on our Windows 2022 OS VM. 
