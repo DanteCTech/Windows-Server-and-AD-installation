@@ -26,8 +26,9 @@ A workgroup is a logical network more suited for the home environment. Each devi
 A domain is a logical network that is suited for companies that have plenty of employees onboard. This allows for admins who maintain the domain controller to create and manage user and accounts in active directory. Once a user has their login credentials and permissions set, they will be able to log into any computer within that domain that is within their privilege to log in-to. Those users and computers can then be further organized into what are called organizational units(OU). The administrator can apply and configure GPOs to the OUs to allow or restrict access to certain features, enforce password policies, configure windows settings etc. 
 
 ### Server setup
-First, though not required I will start with changing the hostname to something that is easily memorable. We will use DC-ADMIN.
-Once you change the name the machine must do a restart to finalize the switch. 
+Objective: Configure the Windows Server hostname before deploying Active Directory Domain Services. 
+We will use DC-ADMIN, as a predictable hostname makes servers easier to identify and manage in an enterprise environment.
+- Once you change the name the machine must do a restart to finalize the switch. 
 
 <img width="1025" height="696" alt="VM domain name" src="https://github.com/user-attachments/assets/9a2d3f06-23f1-4421-92c0-e547357cd6aa" />
 
